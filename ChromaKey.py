@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
 
 imagem_com_fundo_verde = cv2.imread('img/projeto1/img_fundo_verde_3.png')
 novo_fundo = cv2.imread('img/projeto1/background_1.png')
@@ -21,5 +22,7 @@ fundo = cv2.bitwise_and(novo_fundo, novo_fundo, mask=mascara_verde)
 
 resultado = cv2.add(pessoa, fundo)
 
-cv2.imshow('Resultado Chroma Key', resultado)
-cv2.show()
+resultado = cv2.cvtColor(resultado, cv2.COLOR_BGR2RGB)
+
+plt.imshow(resultado,cmap='grey')
+plt.show()
