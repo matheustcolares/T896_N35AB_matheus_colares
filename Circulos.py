@@ -9,7 +9,6 @@ imagem_cinza = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
 kernel = np.ones((5,5),np.uint8)
 # Suaviza a imagem para reduzir ruído
 imagem_suavizada = cv2.medianBlur(imagem_cinza, 5)
-plt.imshow(imagem_suavizada)
 
 # Detecta círculos usando a Transformada de Hough
 circulos = cv2.HoughCircles(
